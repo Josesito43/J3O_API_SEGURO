@@ -19,14 +19,14 @@ namespace J30_API_SEGURO.Controllers
             _context = context;
         }
 
-        // GET: api/Seguros
+        // TODOS LOS SEGUROS
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Seguro>>> GetSeguros()
         {
             return await _context.Seguros.ToListAsync();
         }
 
-        // GET: api/Seguros/5
+        // BUSCAR SEGURO POR ID
         [HttpGet("{id}")]
         public async Task<ActionResult<Seguro>> GetSeguro(int id)
         {
@@ -40,7 +40,7 @@ namespace J30_API_SEGURO.Controllers
             return seguro;
         }
 
-        // PUT: api/Seguros/5
+        // ACTUALIZAR SEGURO POR ID
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSeguro(int id, Seguro seguro)
         {
@@ -70,7 +70,7 @@ namespace J30_API_SEGURO.Controllers
             return NoContent();
         }
 
-        // POST: api/Seguros
+        // AÑADIR UN NUEVO SEGURO
         [HttpPost]
         public async Task<ActionResult<Seguro>> PostSeguro(Seguro seguro)
         {
@@ -80,7 +80,7 @@ namespace J30_API_SEGURO.Controllers
             return CreatedAtAction("GetSeguro", new { id = seguro.IdSeguro }, seguro);
         }
 
-        // DELETE: api/Seguros/5
+        // ELIMINAR SEGURO POR ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSeguro(int id)
         {
