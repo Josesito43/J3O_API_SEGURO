@@ -1,0 +1,6 @@
+@J3O_API_SEGURO_HostAddress = http://localhost:5079
+
+GET {{J3O_API_SEGURO_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
